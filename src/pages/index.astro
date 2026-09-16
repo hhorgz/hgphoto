@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Carrousel from "../components/Carrousel.astro";
+---
+
+<Layout pageTitle="Inicio - Hanns Guzmán">
+	<Hero />
+	<div id="about" class="bg-background-2 flex flex-col items-center">
+		<p class="text-4xl font-grotesk leading-15 text-justify tracking-wider px-30 md:px-50 lg:px-120 py-20">
+			Soy un artista visual que trabaja mayormente a través del dibujo ilustrativo y la fotografía.
+			Actualmente resido en Guatemala. Me interesa principalmente el retrato animal, la naturaleza
+			y la espontaneidad de la vida.
+		</p>
+		<a href="/contacto">
+			<div class="button button-secondary">
+				Contáctame
+			</div>
+		</a>
+
+		<Carrousel title="Retrato animal" />
+		<Carrousel title="Eventos" />
+		<Carrousel title="Otros" />
+	</div>
+</Layout>
