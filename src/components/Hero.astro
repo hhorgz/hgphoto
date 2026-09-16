@@ -5,11 +5,11 @@ import bannerImage from "../assets/Mushroom.png";
 <div id="hero" class="relative h-[calc(100vh-64px)] w-full bg-background">
     <!-- Logo -->
      <div class="absolute -top-35 left-0 flex h-full w-full items-center justify-center z-20">
-         <img class="h-auto w-25" src="/logo.svg" alt="Hanns Logo" />
+         <img class="h-auto w-20 md:w-25 lg:w-30" src="/logo.svg" alt="Hanns Logo" />
     </div>
     <!-- Text -->
     <div class="absolute top-0 left-0 flex h-full w-full items-center justify-center z-20">
-        <h1 class="text-center text-9xl font-medium font-caudex text-highlight md:text-7xl lg:text-9xl">
+        <h1 class="text-5xl md:text-7xl lg:text-9xl text-center font-medium font-caudex tracking-wider text-highlight">
             Hanns Guzmán
         </h1>
     </div>
@@ -17,7 +17,7 @@ import bannerImage from "../assets/Mushroom.png";
     <div class="absolute -top-15 left-0 flex h-full w-full items-center justify-center">
         <Image
         src={bannerImage}
-        alt="Hero banner image"
+        alt="Mushrooms by Hanns Guzmán"
         class="h-2/3 w-auto motion-safe:animate-fade-in"
         format="webp"
         quality={85}
@@ -30,8 +30,8 @@ import bannerImage from "../assets/Mushroom.png";
     </div>
     <!-- SVG Down Arrow -->
      <div class="absolute bottom-5 right-0 flex w-full items-center justify-center z-20">
-        <a href="#about">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.4" class="stroke-highlight size-25">
+        <a href="#about" aria-label="Ir a la sección sobre mí">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.4" class="stroke-highlight size-20 md:size-25">
                 <path stroke-linecap="butt" stroke-linejoin="bevel" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
         </a>
