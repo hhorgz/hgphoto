@@ -1,5 +1,6 @@
 @import url('./fonts/caudex.css');
 @import url('./fonts/spacegrotesk.css');
+@import url('./fonts/Avenir/avenir.css');
 
 @import "tailwindcss";
 
@@ -21,6 +22,7 @@
     --font-heading: 'var(--aw-font-heading, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif;
     --font-caudex: 'Caudex', sans-serif;
     --font-grotesk: 'Space Grotesk', sans-serif;
+    --font-avenir: 'Avenir', sans-serif;
 
     --animate-fade-in: fade-in 1.5s ease-out both;
 }
