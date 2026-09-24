@@ -40,6 +40,10 @@
 }
 
 @layer base {
+    .hero-container {
+        @apply bg-background-2 md:px-10 lg:px-15 md:py-15
+    }
+
     .button {
         @apply font-sans font-medium text-lg py-3 px-10 rounded-full border shadow-xl transition-colors duration-300;
     }
@@ -50,6 +54,22 @@
 
     .button-secondary {
         @apply bg-secondary border-background text-caption shadow-md hover:bg-background hover:border-2 hover:border-secondary hover:text-secondary transition-colors duration-300;
+    }
+
+    h1 .variant-2 {
+        @apply font-grotesk text-7xl md:text-8xl lg:text-9xl tracking-[-0.09em]
+    }
+
+    h2 .variant-2 {
+        @apply text-xl tracking-wide
+    }
+
+    p .variant-2 {
+        @apply tracking-wider font-stretch-ultra-expanded
+    }
+
+    label.contact-form{
+        @apply basis-full lg:basis-1/2 text-highlight font-semibold md:font-light md:text-sm py-2 font-avenir
     }
 
 }

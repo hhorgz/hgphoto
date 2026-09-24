@@ -1,9 +1,46 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.astro";
+import painting from "../assets/SiempreMePierdo.jpg";
 ---
 
 <Layout pageTitle="Contacto - Hanns Guzmán">
-	<h1>CONTACTO</h1>
+	<!-- Text content and picture -->
+	<div class="hero-container">
+		<div class="grid items-stretch grid-cols-1 md:grid-cols-2 md:gap-25 h-screen md:h-200 w-full">
+			<div class="flex flex-col justify-center order-2 md:order-2 px-5 md:px-10 lg:px-50 gap-y-5">
+				<h1>
+					<span class="variant-2">
+						¿Tienes dudas?
+					</span>
+				</h1>
+				<h2>
+					<span class="variant-2">
+						Puedes ponerte en contacto
+					</span>
+				</h2>
+				<p class="pt-5">
+					<span class="variant-2">
+						Llena el siguiente formulario y hazme saber cuáles son tus ideas y qué es lo que 
+						buscas. Con gusto intentaré orientarte para lograr materializar lo que necesitas.
+					</span>
+				</p>
+			</div>
+			<div class="order-1 md:order-2">
+				<Image
+					src={painting}
+					alt="Pintura de orquideas con acrilico"
+					loading="eager"
+					format="webp"
+					quality={80}
+					height={painting.height}
+					layout="constrained"
+					fit="cover"
+					class="h-full w-full object-cover"
+				 />
+			</div>
+		</div>
+	</div>
 	<ContactForm />
 </Layout>
