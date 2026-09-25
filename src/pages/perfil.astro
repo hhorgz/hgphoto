@@ -5,8 +5,9 @@ import selfPortrait from "../assets/SelfPortrait.jpg";
 ---
 
 <Layout pageTitle="Perfil - Hanns Guzmán">
+	<!-- Hero -->
 	<div class="hero-container">
-		<div class="grid overflow-hidden grid-cols-1 md:grid-cols-2 lg:gap-25 h-full md:h-200 w-full">
+		<div class="grid overflow-hidden grid-cols-1 md:grid-cols-2 lg:gap-10 xl:gap-25 h-screen lg:h-200 w-full">
 			<!--Image -->
 			<div>
 				<Image
@@ -17,37 +18,91 @@ import selfPortrait from "../assets/SelfPortrait.jpg";
 					quality={80}
 					height={selfPortrait.height}
 					layout="constrained"
-					position="left"
+					position="left bottom"
 					fit="contain"
-					class="h-full w-full object-cover object-left"
+					class="h-full w-full object-cover object-bottom-left"
 				 />
 			</div>
 
 			<!-- Text -->
-			<div class="flex flex-col md:flex-row h-full gap-y-5 gap-x-5 lg:gap-x-10 max-sm:py-5 max-sm:px-5 md:pr-10 lg:pr-20">
-				<div class="md:rotate-180 w-auto">
-					<h1 class="h-full text-center md:[writing-mode:vertical-rl]">
-						<span class="variant-2 whitespace-nowrap">
-							¿Quién soy?
-						</span>
+			<div class="flex flex-col md:flex-row h-full gap-y-5 gap-x-5 lg:gap-x-10 px-5 lg:px-0">
+				<div class="md:rotate-180 pt-5 md:pt-0 w-auto">
+					<h1 class="variant-2 whitespace-nowrap h-full text-center md:[writing-mode:vertical-rl]">
+						¿Quién soy?
 					</h1>
 				</div>
 				<div class="flex flex-col flex-2 justify-center gap-y-5 py-5">
-					<h2>
-						<span class="variant-2 text-gray-400">
-							Hanns Guzmán | Sin Mannos
-						</span>
+					<h2 class="variant-2">
+						Hanns Guzmán | Sin Mannos
 					</h2>
-					<p class="md:pt-5 lg:pr-50">
-						<span class="variant-2">
-							Por la necesidad visceral de siempre crear, quiero darle visibilidad a esas
-							ideas de mi juventud y exteriorizar lo imaginativo que no podría ser visualizado
-							de otra forma. Busco representar cómo todo está vivo y cambiando, y su antítesis, cómo
-							todo muere y jamás será estático. Hablo de lo pequeño, lo oculto o ignorado. Hago
-							ilustración y fotografía.
-						</span>
+					<p class="variant-2 md:pt-5 md:pr-5 lg:pr-10 xl:pr-50">
+						Por la necesidad visceral de siempre crear, quiero darle visibilidad a esas
+						ideas de mi juventud y exteriorizar lo imaginativo que no podría ser visualizado
+						de otra forma. Busco representar cómo todo está vivo y cambiando, y su antítesis, cómo
+						todo muere y jamás será estático. Hablo de lo pequeño, lo oculto o ignorado. Hago
+						ilustración y fotografía.
 					</p>
 				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Trayectoria -->
+	<div id="trayectoria" class="grid grid-cols-1 md:grid-cols-2 bg-background-2 px-5 lg:px-15 py-10 md:py-20">
+		<h1 class="variant-2 text-center md:text-left xl:text-center">
+			Trayectoria
+		</h1>
+		<div class="flex flex-col">
+			<div class="trajectory-item">
+				<h2 class="variant-1">
+						2026 / Austin, Texas
+				</h2>
+				<ul class="list-disc list-inside">
+					<li>
+						Feb - No Comply Skateboards 19th Anniversary Party
+					</li>
+				</ul>
+			</div>
+			<div class="trajectory-item">
+				<h2 class="variant-1">
+					2024 / Ciudad de Guatemala
+				</h2>
+				<ul class="list-disc list-inside">
+					<li>
+						Jul - Volumen, textura y vacíos. Exposición de escultura
+					</li>
+					<li>
+						Jul - FILGUA. Migración ilustrada
+					</li>
+					<li>
+						May - Conmemoración de natalicio de Efraín Recinos
+					</li>
+					<li>
+						Feb - Festival arte y magia. Siembra
+					</li>
+				</ul>
+			</div>
+			<div class="trajectory-item">
+				<h2 class="variant-1">
+					2023 / Ciudad de Guatemala
+				</h2>
+				<ul class="list-disc list-inside">
+					<li>
+						Dic - Festival arte y magia. Travesía cósmica
+					</li>
+					<li>
+						Oct - Festival arte y magia. Equinoccio
+					</li>
+				</ul>
+			</div>
+			<div class="trajectory-item">
+				<h2 class="variant-1">
+					2022 / Ciudad de Guatemala
+				</h2>
+				<ul class="list-disc list-inside">
+					<li>
+						Dic - FILGUA. Zine Bandas Chinches Records
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
