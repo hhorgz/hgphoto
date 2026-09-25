@@ -44,6 +44,10 @@
         @apply bg-background-2 md:px-10 lg:px-15 md:py-15
     }
 
+    .trajectory-item {
+        @apply py-2 md:py-8
+    }
+
     .button {
         @apply font-sans font-medium text-lg py-3 px-10 rounded-full border shadow-xl transition-colors duration-300;
     }
@@ -56,20 +60,32 @@
         @apply bg-secondary border-background text-caption shadow-md hover:bg-background hover:border-2 hover:border-secondary hover:text-secondary transition-colors duration-300;
     }
 
-    h1 .variant-2 {
-        @apply font-grotesk text-7xl md:text-8xl lg:text-9xl tracking-[-0.09em]
+    h1.variant-2 {
+        @apply font-grotesk text-6xl md:text-8xl xl:text-9xl tracking-[-0.09em]
+    }
+    
+    h2.variant-1 {
+        @apply font-grotesk md:text-xl max-lg:text-2xl tracking-wide py-5
     }
 
-    h2 .variant-2 {
-        @apply text-xl tracking-wide
+    h2.variant-2 {
+        @apply font-grotesk text-xl xl:text-2xl lg:tracking-widest text-gray-400
     }
 
-    p .variant-2 {
-        @apply tracking-wider font-stretch-ultra-expanded
+    h3.variant-2 {
+        @apply text-xl tracking-wider
+    }
+
+    p.variant-2 {
+        @apply tracking-wider text-justify
     }
 
     label.contact-form{
         @apply basis-full lg:basis-1/2 text-highlight font-semibold md:font-light md:text-sm py-2 font-avenir
+    }
+
+    li {
+        @apply text-base lg:text-xl font-thin font-stretch-expanded py-0.5
     }
 
 }
