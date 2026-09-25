@@ -72,8 +72,8 @@
         @apply font-grotesk text-xl xl:text-2xl lg:tracking-widest text-gray-400
     }
 
-    h3 .variant-2 {
-        @apply text-xl tracking-wide
+    h3.variant-2 {
+        @apply text-xl tracking-wider
     }
 
     p.variant-2 {
