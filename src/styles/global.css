@@ -61,11 +61,15 @@
     }
 
     h2 .variant-2 {
+        @apply font-grotesk text-xl lg:text-2xl tracking-widest text-gray-400
+    }
+
+    h3 .variant-2 {
         @apply text-xl tracking-wide
     }
 
     p .variant-2 {
-        @apply tracking-wider font-stretch-ultra-expanded
+        @apply tracking-wider text-justify
     }
 
     label.contact-form{
