@@ -1,20 +1,51 @@
 ---
-
+import Icon from "heroicons-astro/Heroicon.astro";
 ---
 
 <header class="sticky top-0 z-50 bg-background">
-    <nav class="mx-auto flex items-center py-5 px-15">
+    <nav class="relative mx-auto flex flex-wrap items-center py-4 md:flex-nowrap md:py-8 px-5 md:px-10 lg:px-20">
         <!-- Logo -->
          <div class="flex flex-1">
-            <a href="/" class="-m-1.5 p-1.5 inline-flex items-center">
+            <a href="/" class="inline-flex items-center">
                 <span class="sr-only">Hanns Guzmán</span>
-                <img class="h-auto w-10" src="/logo.svg" alt="" />
-                <h1 class="m-0 text-highlight font-caudex text-4xl">HG</h1>
+                <img class="h-auto w-12 md:w-10" src="/logo.svg" alt="" />
+                <h1 class="hidden md:inline m-0 text-highlight font-caudex text-4xl">HG</h1>
             </a>
         </div>
 
         <!-- Desktop menu -->
-        <div id="sitemap" class="hidden font-light text-highlight lg:flex lg:ml-auto lg:gap-x-12">
+        <div id="sitemap" class="hidden font-light text-highlight md:flex md:ml-auto lg:gap-x-12 md:gap-x-5">
+            <a href="/" class="hover:border-b-2">Inicio</a>
+            <a href="/portafolio" class="hover:border-b-2">Portafolio</a>
+            <a href="/perfil" class="hover:border-b-2">Perfil</a>
+            <a href="/contacto" class="hover:border-b-2">Contacto</a>
+        </div>
+
+        <!-- Mobile menu -->
+        <button
+            id="open-mobile-menu"
+            type="button"
+            class="ml-auto inline-flex items-center justify-center rounded-md p-2 text-highlight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight md:hidden"
+            aria-label="Abrir menú principal"
+            aria-expanded="false"
+            aria-controls="mobile-sitemap"
+        >
+            <Icon iconCode="menu" customClasses="h-10 w-10  " />
+        </button>
+
+        <button
+            id="close-mobile-menu"
+            type="button"
+            class="bg-highlight text-background rounded-md p-2 md:hidden"
+            aria-label="Cerrar menú principal"
+            aria-expanded="false"
+            aria-controls="mobile-sitemap"
+            hidden
+        >
+            <Icon iconCode="x" customClasses="h-10 w-10"/>
+        </button>
+
+        <div id="mobile-sitemap" hidden class="flex flex-col w-full h-screen justify-center-safe gap-12 bg-background font-caudex text-5xl text-center text-highlight md:hidden">
             <a href="/">Inicio</a>
             <a href="/portafolio">Portafolio</a>
             <a href="/perfil">Perfil</a>
@@ -22,3 +53,27 @@
         </div>
     </nav>
 </header>
+
+<script>
+    const openMenuButton = document.getElementById("open-mobile-menu");
+    const closeMenuButton = document.getElementById("close-mobile-menu");
+    const mobileSitemap = document.getElementById("mobile-sitemap");
+
+    if (!openMenuButton || !closeMenuButton || !mobileSitemap) {
+        throw new Error("Mobile navigation controls could not be found.");
+    }
+
+    openMenuButton.addEventListener("click", () => {
+        mobileSitemap.hidden = false;
+        openMenuButton.setAttribute("aria-expanded", "true");
+        openMenuButton.setAttribute("hidden", "true");
+        closeMenuButton.removeAttribute("hidden");
+    });
+
+    closeMenuButton.addEventListener("click", () => {
+        mobileSitemap.hidden = true;
+        openMenuButton.setAttribute("aria-expanded", "false");
+        openMenuButton.removeAttribute("hidden");
+        closeMenuButton.setAttribute("hidden", "true");
+    });
+</script>
