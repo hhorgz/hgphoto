@@ -2,6 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Carrousel from "../components/Carrousel.astro";
+
+import animal1 from '../assets/portfolio/animalPortrait/picture1.jpg';
+import animal2 from '../assets/portfolio/animalPortrait/picture2.jpg';
+import animal3 from '../assets/portfolio/animalPortrait/picture3.jpg';
+
+import evento1 from '../assets/portfolio/events/picture1.jpg';
+import evento2 from '../assets/portfolio/events/picture2.jpg';
+import evento3 from '../assets/portfolio/events/picture3.jpg';
+
+import otro1 from '../assets/portfolio/others/picture1.jpg';
+import otro2 from '../assets/portfolio/others/picture2.jpg';
+import otro3 from '../assets/portfolio/others/picture3.jpg';
 ---
 
 <Layout pageTitle="Inicio - Hanns Guzmán">
@@ -18,8 +30,22 @@ import Carrousel from "../components/Carrousel.astro";
 			</div>
 		</a>
 
-		<Carrousel title="Retrato animal" />
-		<Carrousel title="Eventos" />
-		<Carrousel title="Otros" />
+		<Carrousel title="Retrato animal" 
+			picture1={animal1}
+			picture2={animal2}
+			picture3={animal3}
+		/>
+
+		<Carrousel title="Eventos" 
+			picture1={evento1}
+			picture2={evento2}
+			picture3={evento3}
+		/>
+
+		<Carrousel title="Otros" 
+			picture1={otro1}
+			picture2={otro2}
+			picture3={otro3}
+		/>
 	</div>
 </Layout>
