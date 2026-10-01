@@ -1,4 +1,45 @@
 ---
-const { title } = Astro.props;
+import { Image } from "astro:assets";
+
+const { title, picture1, picture2, picture3 } = Astro.props;
 ---
-<h1>{ title } Carrousel</h1>
+<div class="py-10">
+    <div class="flex w-full px-5 lg:px-10">
+        <h2 class="variant-1">{ title }</h2>
+    </div>
+    <div class="flex flex-col lg:flex-row px-10 lg:px-20 gap-x-20 gap-y-5 lg:overflow-scroll">
+        <Image 
+        src={picture1}
+        alt="Picture 1"
+        loading="lazy"
+        format="webp"
+        quality={80}
+        layout="constrained"
+        fit="cover"
+        class="h-auto lg:h-180 w-full lg:w-auto"
+        inferSize
+        />
+        <Image 
+        src={picture2}
+        alt="Picture 2"
+        loading="lazy"
+        format="webp"
+        quality={80}
+        layout="constrained"
+        fit="cover"
+        class="h-auto lg:h-180 w-full lg:w-auto"
+        inferSize
+        />
+        <Image 
+        src={picture3}
+        alt="Picture 3"
+        loading="lazy"
+        format="webp"
+        quality={80}
+        layout="constrained"
+        fit="cover"
+        class="h-auto lg:h-180 w-full lg:w-auto"
+        inferSize
+        />
+    </div>  
+</div>
