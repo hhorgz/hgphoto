@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+const { link, name, coverImage } = Astro.props;
+---
+<div class="relative justify-items-center">
+    <a href={link}>
+        <div class="absolute inset-0 flex flex-col justify-center bg-background opacity-50 transition delay-75 duration-300 hover:opacity-0">
+            <h2 class="variant-2 w-full text-caption text-center">
+                {name}
+            </h2>
+            <h4 class="w-full text-center">
+                &LT;Click para abrir galeria&GT;
+            </h4>
+        </div>
+        <Image 
+            src={coverImage}
+            alt=`Galeria de ${name}`
+            loading={"lazy"}
+            format="webp"
+            layout="constrained"
+            fit="cover"
+            class="h-auto w-auto bg-background"
+            quality={"mid"}
+            width={800}
+            inferSize
+        />
+    </a>
+</div>

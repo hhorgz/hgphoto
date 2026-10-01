@@ -1,7 +1,35 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import Gallery from "../components/GalleryCover.astro";
+
+import retratoAnimal from "../assets/portfolio/animalPortrait/cover.jpg";
+import eventos from "../assets/portfolio/events/cover.jpg";
+import street from "../assets/portfolio/street/cover.jpg";
+import naturaleza from "../assets/portfolio/naturaleza/cover.jpg";
 ---
 
 <Layout pageTitle="Portafolio - Hanns Guzmán">
-	<h1>PORTAFOLIO</h1>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-10 px-10 py-10">		
+		<Gallery
+			link="galerias/retratoAnimal"
+			name="Retrato animal"
+			coverImage={retratoAnimal}
+		/>
+		<Gallery
+			link="galerias/eventos"
+			name="Eventos"
+			coverImage={eventos}
+		/>
+		<Gallery
+			link="galerias/street"
+			name="Street"
+			coverImage={street}
+		/>
+		<Gallery
+			link="galerias/naturaleza"
+			name="Naturaleza"
+			coverImage={naturaleza}
+		/>
+	</div>
 </Layout>

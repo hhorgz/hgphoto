@@ -76,6 +76,10 @@
         @apply text-xl tracking-wider
     }
 
+    h4 {
+        @apply font-light font-avenir text-sm text-caption
+    }
+
     p.variant-2 {
         @apply tracking-wider text-justify
     }
