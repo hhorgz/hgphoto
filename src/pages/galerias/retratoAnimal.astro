@@ -1,0 +1,66 @@
+---
+import Gallery from "../../components/GalleryImage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import picture0 from "../../assets/portfolio/animalPortrait/picture0.jpg";
+import picture1 from "../../assets/portfolio/animalPortrait/picture1.jpg";
+import picture2 from "../../assets/portfolio/animalPortrait/picture2.jpg";
+import picture4 from "../../assets/portfolio/animalPortrait/picture3.jpg";
+import picture5 from "../../assets/portfolio/animalPortrait/picture4.jpg";
+import picture6 from "../../assets/portfolio/animalPortrait/picture5.jpg";
+---
+
+<Layout pageTitle="Retrato animal">
+    <h1 class="variant-2">
+        Retrato Animal
+    </h1>
+    <div class="flex flex-col md:flex-row gap-y-3 gap-x-3 px-5 lg:px-10 pt-10">
+        <div class="grow">
+            <Gallery
+                link="galerias/retratoAnimal"
+                name="Retrato animal"
+                picture={picture0}
+            />
+        </div>
+        <div class="grow">
+            <Gallery
+                link="galerias/eventos"
+                name="Eventos"
+                picture={picture1}
+            />
+        </div>
+        <div class="grow">
+            <Gallery
+                link="galerias/street"
+                name="Street"
+                picture={picture2}
+            />
+        </div>
+	</div>
+    <div class="flex flex-col md:flex-row gap-y-3 gap-x-3 px-5 lg:px-10 py-3">
+        <div class="grow">
+            <Gallery
+                link="galerias/retratoAnimal"
+                name="Retrato animal"
+                picture={picture4}
+            />
+        </div>
+        <div class="grow">
+            <Gallery
+                link="galerias/eventos"
+                name="Eventos"
+                picture={picture5}
+            />
+        </div>
+        <div class="grow">
+            <Gallery
+                link="galerias/street"
+                name="Street"
+                picture={picture6}
+            />
+        </div>
+	</div>
+    <a href="/portafolio">
+        &longleftarrow;Regresar
+    </a>
+</Layout>
