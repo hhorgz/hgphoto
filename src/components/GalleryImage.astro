@@ -2,16 +2,14 @@
 import { Image } from "astro:assets";
 const { picture } = Astro.props;
 ---
-<div>
     <Image 
         src={picture}
         alt=`picture`
         loading={"lazy"}
         format="webp"
-        fit="contain"
-        class="h-full w-auto bg-background-2"
+        fit="cover"
+        class="h-full w-full bg-background-2"
         quality={85}
-        height={700}
+        height={650}
         inferSize
     />
-</div>

@@ -8,6 +8,8 @@ import picture2 from "../../assets/portfolio/animalPortrait/picture2.jpg";
 import picture4 from "../../assets/portfolio/animalPortrait/picture3.jpg";
 import picture5 from "../../assets/portfolio/animalPortrait/picture4.jpg";
 import picture6 from "../../assets/portfolio/animalPortrait/picture5.jpg";
+
+const pictures = [picture0, picture1, picture2, picture4, picture5, picture6];
 ---
 
 <Layout pageTitle="Retrato animal">
@@ -60,6 +62,18 @@ import picture6 from "../../assets/portfolio/animalPortrait/picture5.jpg";
             />
         </div>
 	</div>
+    <div class:list={[
+        "grid", 
+        "grid-cols-4", 
+        "gap-x-3 gap-y-3", 
+        "px-5"
+        ]}>
+        {pictures.map( singlePicture => (
+            <div class=`${singlePicture.width > singlePicture.height ? "col-span-2" : "col-span-1"}`>
+                <Gallery picture={singlePicture} />
+            </div>
+        ))}
+    </div>
     <a href="/portafolio">
         &longleftarrow;Regresar
     </a>
