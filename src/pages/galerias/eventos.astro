@@ -1,7 +1,10 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Gallery from "../../layouts/Gallery.astro";
+
+const animalFiles = import.meta.glob<{default: ImageMetadata}>("/src/assets/portfolio/events/picture*.{jpg,jpeg,png,webp}");
+const images = Object.entries(animalFiles);
 ---
-
-<Layout pageTitle="Eventos">
-
-</Layout>
+<Gallery 
+    filesGlob={images}
+    galleryName="Eventos"
+/>

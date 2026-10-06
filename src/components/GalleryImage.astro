@@ -1,14 +1,26 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from "astro:assets";
-const { picture } = Astro.props;
+
+interface Props {
+    imagePath: string,
+    priority: "lazy" | "eager";
+}
+
+const { 
+    imagePath,
+    priority="lazy" 
+    } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfolio/*/picture*.{jpg,jpeg,png,webp}');
+if (!images[imagePath]) throw new Error(`${imagePath} does not exists in glob`);
 ---
     <Image 
-        src={picture}
-        alt=`picture`
-        loading={"lazy"}
+        src={images[imagePath]()}
+        alt="picture"
+        loading={priority}
         format="webp"
-        fit="cover"
-        class="h-full w-full bg-background-2"
+        class="h-full w-full bg-background-2 object-cover hover:scale-101 hover:drop-shadow-2xl"
         quality={85}
         height={650}
         inferSize

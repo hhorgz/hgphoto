@@ -1,0 +1,42 @@
+---
+import Gallery from "../components/GalleryImage.astro";
+import Layout from "./Layout.astro";
+
+const animalFiles = import.meta.glob<{default: ImageMetadata}>("/src/assets/portfolio/animalPortrait/picture*.{jpg,jpeg,png,webp}");
+const images = Object.entries(animalFiles);
+
+interface Props {
+    filesGlob: [string, () => Promise<{default: ImageMetadata}>][],
+    galleryName: string
+}
+
+const { filesGlob, galleryName } = Astro.props;
+---
+
+<Layout pageTitle="Retrato animal">
+    <h1 class="variant-2">
+        {galleryName}
+    </h1>
+
+    <div class:list={[
+        "grid", 
+        "grid-cols-1 md:grid-cols-3 lg:grid-cols-4", 
+        "gap-x-3 gap-y-3", 
+        "px-5 lg:px-10"
+        ]}>
+        
+        {filesGlob.map( async ([key,value], index) => {
+            const {default: imageData} = await value();
+            return(
+                <div class=`${imageData.width > imageData.height ? "md:col-span-3 lg:col-span-2" : "col-span-1"}`>
+                    <Gallery imagePath={key} priority=`${index > 6 ? "lazy" : "eager"}` />
+                </div>
+            );
+        })}
+    </div>
+    <div class="flex flex-row-reverse p-5">
+        <a href="/portafolio">
+            &longleftarrow;Regresar
+        </a>
+    </div>
+</Layout>
