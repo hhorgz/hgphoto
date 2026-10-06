@@ -1,0 +1,10 @@
+---
+import Gallery from "../../layouts/Gallery.astro";
+
+const animalFiles = import.meta.glob<{default: ImageMetadata}>("/src/assets/portfolio/events/picture*.{jpg,jpeg,png,webp}");
+const images = Object.entries(animalFiles);
+---
+<Gallery 
+    filesGlob={images}
+    galleryName="Eventos"
+/>
